@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: radial-gradient(
+      ellipse at top,
+      rgba(0, 246, 255, 0.05),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at bottom,
+      rgba(255, 45, 111, 0.05),
+      transparent 60%
+    ),
+    #05070d;
+  color: #cfe7ff;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle CRT scanlines */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(255, 255, 255, 0.025) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  z-index: 50;
+  mix-blend-mode: overlay;
+}
+
+::selection {
+  background: rgba(0, 246, 255, 0.35);
+  color: #fff;
+}
+
+/* Custom scrollbar inside code blocks */
+.qasm-block::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.qasm-block::-webkit-scrollbar-track {
+  background: rgba(0, 246, 255, 0.05);
+}
+.qasm-block::-webkit-scrollbar-thumb {
+  background: rgba(0, 246, 255, 0.3);
+  border-radius: 4px;
+}
