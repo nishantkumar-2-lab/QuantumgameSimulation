@@ -132,7 +132,7 @@ export default function App(): JSX.Element {
         bob_basis: setup.bob_basis,
       };
       try {
-        const res = await fetch(`${API_URL}/api/intercept`, {
+        const res = await fetch(`/api/intercept`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
