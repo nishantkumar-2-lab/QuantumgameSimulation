@@ -5,6 +5,7 @@
   "observability": {
     "enabled": true
   },
+  "main": "worker/src/index.ts",
   "assets": {
     "directory": "frontend/dist"
   },
